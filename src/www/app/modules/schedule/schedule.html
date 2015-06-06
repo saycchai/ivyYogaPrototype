@@ -1,0 +1,31 @@
+<ion-view>
+	<ion-nav-title>
+      {{'app_title' | translate}} - {{'lbl_menu_schedule' | translate}}
+    </ion-nav-title>
+
+	<ion-content padding="true">
+		<span style="float: left;"><button class="button button-small icon ion-@@platform-refresh" ng-click="refresh()"></button></span>
+<div align="center">
+			<div ng-repeat="n in classScheduleData.classes">
+				<div></div>
+				
+				<div class="row">
+					<div class="col col-demo-header col-100">{{n.place[getLang()]}}</div>
+				</div>
+				
+				<div class="row">
+					<div class="col col-demo-header" ng-repeat="h in classScheduleData.headers">
+						<pre>{{showTableHeader(h)}}</pre>
+					</div>
+                </div>
+				<div class="row" ng-repeat="c in n.classSchedule">
+					<div class="col col-demo" ng-repeat="d in c">
+						<a ng-click="openModal(d, $parent.$parent.$index, $index)">
+							<pre>{{showTableContent(d)}}</pre>
+						</a>
+					</div>
+				</div>
+			</div>
+</div>
+		
+	</ion-content>

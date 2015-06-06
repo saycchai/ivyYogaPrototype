@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+<style>
+.col-demo-header {
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  background: #F9DFAE;
+  text-align: center;
+  color: #404040;
+  font-weight: bold;
+}
+
+.col-demo {
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  background: #FEFDE0;
+  text-align: center;
+  color: #8000FF;
+}
+</style>
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.min.js"></script>
+
+	<script src="lib/angular-translate/angular-translate.min.js"></script>
+	<script src="lib/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="app.bundle.js" charset="UTF-8"></script>
+  </head>
+
+  <!-- @@appName will be replaced by gulp-replace -->
+  <body ng-app="@@name">
+  
+  <ion-pane>
+  
+<ion-side-menus enable-menu-with-back-views="true" ng-controller="MenuCtrl">
+
+     <ion-side-menu-content>
+   <!--
+     The nav bar that will be updated as we navigate between views.
+   -->
+   <ion-nav-bar class="bar-royal">
+	<ion-nav-back-button class="button-icon ion-chevron-left">
+	</ion-nav-back-button>
+          <ion-nav-buttons side="left">
+            <button class="button button-icon button-clear ion-navicon" data-ng-show="showLeftMenuIcon()" ng-click="showLeftMenu()">
+            </button>
+            <button class="button button-icon button-clear ion-chevron-left"data-ng-show="showBackIcon()" ng-click="back()">
+            </button>
+          </ion-nav-buttons>
+   </ion-nav-bar>
+
+	   <!--
+	     The views will be rendered in the <ion-nav-view> directive below
+	     Templates are in the /templates folder (but you could also
+	     have templates inline in this html file if you'd like).
+	   -->
+	   <ion-nav-view  class="slide-left-right" title="{{'app_title' | translate}}"></ion-nav-view> 
+	</ion-side-menu-content> 
+
+      <ion-side-menu side="left">
+        <ion-header-bar class="bar bar-header bar-assertive">
+          <h1 class="title">Menu</h1>
+        </ion-header-bar>
+        <ion-content has-header="true">
+			<ul class="list">
+				<a class="item" menu-close nav-clear ng-click="showRightMenu()">{{'lbl_menu_setting' | translate}}</a>
+				<a class="item" menu-close nav-clear ui-sref="signin">{{'lbl_menu_signout' | translate}}</a>
+			</ul>
+        </ion-content>
+      </ion-side-menu>
+
+    </ion-side-menus> 
+	 </ion-pane>
+  </body>
+</html>

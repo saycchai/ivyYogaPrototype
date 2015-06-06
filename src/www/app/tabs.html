@@ -1,0 +1,26 @@
+<!--
+Create tabs with an icon and label, using the tabs-positive style.
+Each tab's child <ion-nav-view> directive will have its own
+navigation history that also transitions its views in and out.
+-->
+<ion-tabs class="tabs-icon-top tabs-color-active-positive">
+
+	<ion-tab title="{{'lbl_menu_schedule' | translate}}" icon="ion-home" href="#/tab/schedule">
+		<ion-nav-view name="tab-schedule"></ion-nav-view>
+	</ion-tab>
+
+	<ion-tab title="{{'lbl_menu_booking' | translate}}" icon="ion-person">
+		<ion-nav-view name="tab-booking"></ion-nav-view>
+	</ion-tab>
+	
+	<ion-tab title="{{'lbl_menu_plan' | translate}}" icon="ion-person">
+		<ion-nav-view name="tab-plan"></ion-nav-view>
+	</ion-tab>
+
+<!-- 
+
+	<ion-tab title="{{'lbl_tab_setting' | translate}}" icon="ion-@@platform-settings" href="#/tab/setting">
+		<ion-nav-view name="tab-setting"></ion-nav-view>
+	</ion-tab>
+ -->
+</ion-tabs>

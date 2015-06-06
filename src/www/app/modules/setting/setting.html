@@ -1,0 +1,11 @@
+<ion-view view-title="{{'app_title' | translate}} - {{'lbl_menu_setting' | translate}}">
+  <ion-content>
+    <ion-list>
+    	{{'lbl_language' | translate}}
+		<select ng-model="settings.lang"
+			ng-change="changeLanguage()"
+		 	ng-options="lang.key as lang.value for lang in settings.languages"
+		>
+    </ion-list>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,29 @@
+<!--
+  This template loads for the 'sign-in' state (app.js)
+-->
+      <ion-view view-title="{{'app_title' | translate}} - {{'lbl_online_booking' | translate}}">
+        <ion-content>
+          <div class="list">
+            <label class="item item-input">
+              <span class="input-label">{{'lbl_login' | translate}}</span>
+              <input type="text" ng-model="user.username">
+            </label>
+            <label class="item item-input">
+              <span class="input-label">{{'lbl_password' | translate}}</span>
+              <input type="password" ng-model="user.password">
+            </label>
+          </div>
+          <div class="padding">
+            <button class="button button-block button-positive" ng-click="signIn(user)">
+              {{'lbl_signin' | translate}}
+            </button>
+            <p class="text-center">
+              <a href="#/forgot-password">{{'lbl_forgot_password' | translate}}</a>
+			  |
+			  <a href="http://booking.myogaonline.com/Document/HKY_BookingGuide_EN-US.pdf" target="_blank">{{'lbl_booking_guide' | translate}}</a>
+			  |
+			  <a href="mailto:ivyyoga@yahoo.com.hk">{{'lbl_contact_us' | translate}}</a>
+            </p>
+          </div>
+        </ion-content>
+      </ion-view>

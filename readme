@@ -1,0 +1,49 @@
+1. to run the project install followings:
+	1.1.	Java JDK 7 or above (NOT just the JRE) - http://www.oracle.com/technetwork/java/javase/downloads/index.html
+	1.2.	Apache Ant 1.9 or above - http://ant.apache.org/bindownload.cgi
+	1.3.	Node.js - https://nodejs.org/
+	1.4.	Android SDK (you may need to install the latest java JDK before install the android SDK) - https://developer.android.com/sdk/installing/index.html
+	1.5.	Ionic - http://ionicframework.com/docs/guide/installation.html
+			npm install -g cordova
+			npm install -g ionic
+	1.6.	Bower - http://bower.io/
+			npm install -g bower
+	1.7.	Gulp - https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md
+			npm install -g gulp
+	1.8.	Karma
+			npm install -g karma-cli
+	1.9.	npm install rimraf -g
+
+2.	After check out the project, cd to <project home>, then run "npm install" to install the necessary modules for node to run (it may take a long time to install)
+
+3. all the source codes are located at <projecthome>/src/www/, to add your own modules
+	3.1 create a dir under <projecthome>/src/www/app/modules/ (e.g. sign-in)
+	3.2 in your module, add your html file and javascript file 
+	3.3 add back your module to tabs.html (<projecthome>/src/www/app/) and main.js (<projecthome>/src/www/)
+	
+4. if you need to add service, please add to <projecthome>/src/www/services, and addback the service to main.js as the app module dependency.
+
+5. To run your unit test, under <projecthome>/src/test/, create your js test file with the name <filename>.test.js
+, then in command prompt, cd <projecthome>, type "gulp test" to run
+
+6. To test your app using a browser, open a command prompt, cd <projecthome> then run "gulp"
+, it will create a folder www under folder <projecthome>/ (so it is <projecthome>/www/ but not <projecthome>/src/www/)
+, the variables start with @@ in the html and js in the folder <projecthome>/src/www/ will be replaced and will output to <projecthome>/www/ 
+, then run ionic serve to start a web server (the ionic server will monitor the change of the <projecthome>/www/)
+, the ionic serve command will auto start a browser to browse the app, if it is not happen, please open a browser by yourself  
+
+7. To test your app using android emulator
+Open a command prompt, cd <projecthome>
+gulp emulate --platform android/ios, default is os dependent, if os is darwin (mac), then use ios otherwise use android
+
+e.g. run "gulp emulate" will open an ios emulator if you are use mac, otherwise will use android emulator 
+
+to specify emulator platform just run
+for android: gulp emulate --platform android
+for ios: gulp emulate --platform ios
+
+
+8. for different environments configuration (e.g. dev, qa, uat, production etc), you can create a <env>.json file to place your configuration
+, in this sample app we have dev.json and qa.json as examples
+default will use dev.json as the configuration file, if you need to change
+just gulp --config qa, then will read qa.json as the configuration
