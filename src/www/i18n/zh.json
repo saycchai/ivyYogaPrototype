@@ -1,0 +1,34 @@
+{
+	"app_title" : "Ivy Yoga"
+	, "lbl_online_booking": "Online Booking"
+    , "lbl_menu_plan": "My Plan"
+    , "lbl_menu_booking": "My Booking"
+    , "lbl_menu_schedule": "Class Schedule"
+	, "lbl_menu_setting" : "Setting"
+	, "lbl_menu_signout" : "Sign Out"
+	
+	
+	, "lbl_login": "Phone #"
+	, "lbl_password": "Password"
+	, "lbl_forgot_password": "Forgot password"
+	, "lbl_booking_guide": "Booking Guide"
+	, "lbl_contact_us": "Contact Us"
+	, "lbl_signin": "Sign In"
+	
+	, "lbl_yoga_class_registration": "Class Registration"
+	, "lbl_date": "Date"
+	, "lbl_class": "Class"
+	, "lbl_classroom": "Classroom"
+	, "lbl_teacher": "Teacher"
+	, "lbl_vancancy": "Vancancy"
+	
+	
+    , "lbl_weather_forecast": "Weather"
+    , "lbl_calendar" : "Calendar"
+    , "lbl_real_time_traffic" : "Traffic"
+    , "lbl_language" : "Language"
+    , "lbl_swimming_pool_temperature" : "Swimming Pool Temperature: "
+    , "lbl_swimming_pool_ph" : "pH value: "
+    , "lbl_button_refresh_carousel" : "Refresh Carousel"
+    
+}
