@@ -4,13 +4,26 @@
     </ion-nav-title>
 
 	<ion-content padding="true">
-		<span style="float: left;"><button class="button button-small icon ion-@@platform-refresh" ng-click="refresh()"></button></span>
+		<div style="float: left;">
+			<button class="button button-small icon ion-@@platform-refresh" ng-click="refresh()"></button>
+
+			<!-- filter -->
+			<select ng-model="filters.classroom"
+				ng-change="filter()"
+				ng-options="classroom.key as classroom[getLang()] for classroom in classroomList"
+			>
+			</select>
+
+			<select ng-model="filters.teacher"
+				ng-change="filter()"
+				ng-options="teacher.code as teacher.name for teacher in teacherList"
+			>
+			</select>
+		</div>
+
 <div align="center">
-			<div ng-repeat="n in classScheduleData.classes">
-				<div></div>
-				
 				<div class="row">
-					<div class="col col-demo-header col-100">{{n.place[getLang()]}}</div>
+					<div class="col col-demo-header col-100">{{filteredClassSchedule.classroom[getLang()]}}</div>
 				</div>
 				
 				<div class="row">
@@ -18,14 +31,13 @@
 						<pre>{{showTableHeader(h)}}</pre>
 					</div>
                 </div>
-				<div class="row" ng-repeat="c in n.classSchedule">
+				<div class="row" ng-repeat="c in filteredClassSchedule.classSchedule">
 					<div class="col col-demo" ng-repeat="d in c">
-						<a ng-click="openModal(d, $parent.$parent.$index, $index)">
+						<a ng-click="openModal(d, filteredClassSchedule.classroomIdx, $index)">
 							<pre>{{showTableContent(d)}}</pre>
 						</a>
 					</div>
 				</div>
-			</div>
 </div>
-		
+
 	</ion-content>

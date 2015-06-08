@@ -1,3 +1,6 @@
+/node_modules/
+/www/
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
