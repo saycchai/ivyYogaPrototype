@@ -1,0 +1,45 @@
+<ion-view>
+	<ion-nav-title>
+      {{'app_title' | translate}} - {{'lbl_menu_booking' | translate}}
+    </ion-nav-title>
+
+	<ion-content padding="true">
+		<div style="float: left;">
+			<button class="button button-small icon ion-@@platform-refresh" ng-click="refresh()"></button>
+		</div>
+
+		<div align="center">
+			<div class="row">
+				<div class="col col-5 col-demo-header">#</div>
+				<div class="col col-50 col-demo-header">{{'lbl_class' | translate}}</div>
+				<div class="col col-25 col-demo-header">{{'lbl_status' | translate}}</div>
+				<div class="col col-20 col-demo-header"></div>
+			</div>
+
+			<div class="row">
+				<div class="col col-5 col-demo">1</div>
+				<div class="col col-50 col-demo">
+					12/6 (Fri) 19:00-20:15
+					<br>Slim Yoga - Ivy
+					<br>Tung Lok St.
+				</div>
+				<div class="col col-25 col-demo">
+					Waiting List
+					<br/>(4th position)
+				</div>
+				<div class="col col-20 col-demo"><button ng-click="openModal(null, null, null)">Cancel</button></div>
+			</div>
+			<div class="row">
+				<div class="col col-5 col-demo">2</div>
+				<div class="col col-50 col-demo">
+					13/6 (Sat) 19:30-20:45
+					<br>Hot Yoga - Cissie
+					<br>Tung Lok St.
+				</div>
+				<div class="col col-25 col-demo">Registered</div>
+				<div class="col col-20 col-demo"><button ng-click="openModal(null, null, null)">Cancel</button></div>
+			</div>
+
+</div>
+
+	</ion-content>

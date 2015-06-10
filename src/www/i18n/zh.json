@@ -16,19 +16,19 @@
 	, "lbl_signin": "Sign In"
 	
 	, "lbl_yoga_class_registration": "Class Registration"
+	, "lbl_yoga_class_cancellation": "Class Cancellation"
 	, "lbl_date": "Date"
 	, "lbl_class": "Class"
 	, "lbl_classroom": "Classroom"
 	, "lbl_teacher": "Teacher"
 	, "lbl_vancancy": "Vancancy"
+	, "lbl_status": "Status"
+
+	, "lbl_class_type": "Type"
+	, "lbl_fix_free": "Fix/Free"
+	, "lbl_valid_period": "Valid Period"
+	, "lbl_price": "Price"
 	
-	
-    , "lbl_weather_forecast": "Weather"
-    , "lbl_calendar" : "Calendar"
-    , "lbl_real_time_traffic" : "Traffic"
     , "lbl_language" : "Language"
-    , "lbl_swimming_pool_temperature" : "Swimming Pool Temperature: "
-    , "lbl_swimming_pool_ph" : "pH value: "
-    , "lbl_button_refresh_carousel" : "Refresh Carousel"
     
 }

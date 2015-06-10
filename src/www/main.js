@@ -18,7 +18,9 @@ var dependencies = [
 	//modules
 	, appModulePrefix + '.signin'
 	, appModulePrefix + '.schedule'
+	, appModulePrefix + '.booking'
 	, appModulePrefix + '.setting'
+	, appModulePrefix + '.plan'
 	
 	//directives
 	, appDirectivePrefix + ".tabsSwipable"

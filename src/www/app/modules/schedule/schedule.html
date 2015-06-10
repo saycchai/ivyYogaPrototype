@@ -34,7 +34,7 @@
 				<div class="row" ng-repeat="c in filteredClassSchedule.classSchedule">
 					<div class="col col-demo" ng-repeat="d in c">
 						<a ng-click="openModal(d, filteredClassSchedule.classroomIdx, $index)">
-							<pre>{{showTableContent(d)}}</pre>
+							<pre style="text-decoration: underline;cursor: pointer;">{{showTableContent(d)}}</pre>
 						</a>
 					</div>
 				</div>
