@@ -1,12 +1,25 @@
 <ion-view view-title="{{'app_title' | translate}} - {{'lbl_menu_setting' | translate}}">
   <ion-content>
     <ion-list>
-    	{{'lbl_language' | translate}}
-		<select ng-model="settings.lang"
-			ng-change="changeLanguage()"
-		 	ng-options="lang.key as lang.value for lang in settings.languages"
-		>
-		</select>
+			<label class="item item-input">
+              <span class="input-label">Phone #:</span>
+              <span>91234567</span>
+            </label>
+			
+			<label class="item item-input">
+              <span class="input-label">Name:</span>
+              <input type="text" value="Ivy">
+            </label>
+
+			<label class="item item-input">
+              <span class="input-label">{{'lbl_language' | translate}}:</span>
+              		<select ng-model="settings.lang"
+						ng-change="changeLanguage()"
+						ng-options="lang.key as lang.value for lang in settings.languages"
+					>
+					</select>
+            </label>
+
     </ion-list>
   </ion-content>
 </ion-view>

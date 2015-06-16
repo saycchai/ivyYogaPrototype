@@ -5,23 +5,52 @@
 
 	<ion-content padding="true">
 		<div style="float: left;">
-			<button class="button button-small icon ion-@@platform-refresh" ng-click="refresh()"></button>
+			<div>
+				<button class="button button-small icon ion-android-refresh" ng-click="refresh()"></button>
 
-			<!-- filter -->
-			<select ng-model="filters.classroom"
-				ng-change="filter()"
-				ng-options="classroom.key as classroom[getLang()] for classroom in classroomList"
-			>
-			</select>
+				<!-- filter -->
+				<select ng-model="filters.classroom"
+					ng-change="filter()"
+					ng-options="classroom.key as classroom[getLang()] for classroom in classroomList"
+				>
+				</select>
 
-			<select ng-model="filters.teacher"
-				ng-change="filter()"
-				ng-options="teacher.code as teacher.name for teacher in teacherList"
-			>
-			</select>
+				<select ng-model="filters.teacher"
+					ng-change="filter()"
+					ng-options="teacher.code as teacher.name for teacher in teacherList"
+				>
+				</select>
+				
+				<select ng-model="filters.view"
+					ng-options="view.key as view.value for view in viewList"
+				>
+				</select>
+				
+			</div>
 		</div>
 
-<div align="center">
+		<div class="row"></div>
+		
+<div ng-if="filters.view == 'row'">
+<ion-item class="col-demo-header">
+	{{filteredClassSchedule.classroom[getLang()]}}
+</ion-item>
+
+
+<ion-list can-swipe="true" ng-repeat="h in classScheduleData.headers" ng-init="outerIdx = $index">
+	<ion-item class="item-divider">
+		{{showTableHeader(h)}}
+	</ion-item>
+	
+	<ion-item ng-repeat="c in filteredClassSchedule.classSchedule" ng-if="showTableContent(c[outerIdx]) != ''">
+		<a ng-click="openModal(c[outerIdx], filteredClassSchedule.classroomIdx, outerIdx)">
+			<span style="text-decoration: underline;cursor: pointer;">{{showTableContent(c[outerIdx])}}</span>
+		</a>
+	</ion-item>
+</ion-list>
+</div>		
+		
+<div align="center" ng-if="filters.view == 'table'">
 				<div class="row">
 					<div class="col col-demo-header col-100">{{filteredClassSchedule.classroom[getLang()]}}</div>
 				</div>

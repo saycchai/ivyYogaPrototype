@@ -28,10 +28,12 @@ angular.module(appModulePrefix + '.schedule', [])
 	$scope.filters = {};
 	$scope.filters.classroom = "";
 	$scope.filters.teacher = "";
+	$scope.filters.view = detectmob()? "row" : "table";
 
 	//drop down data
 	$scope.classroomList = [];
 	$scope.teacherList = [];
+	$scope.viewList = [{"key":"row", "value":"Row"}, {"key":"table", "value":"Table"}];
 
 	$ionicModal.fromTemplateUrl('app/modules/schedule/yogaClassModal.html'
 		, {
@@ -148,8 +150,8 @@ angular.module(appModulePrefix + '.schedule', [])
 			return "";
 		}
 
-		return yogaClass[$scope.getLang()] 
-				+ "\r\n" + yogaClass.start + "-" + yogaClass.end
+		return yogaClass.start + "-" + yogaClass.end
+				+ "\r\n" + yogaClass[$scope.getLang()] 
 				+ "\r\n" + yogaClass.teacher
 				+ "\r\n" + "(" + yogaClass.vancancy + ")"
 				;
@@ -180,6 +182,22 @@ angular.module(appModulePrefix + '.schedule', [])
 	{
 	
 	}
+	
+function detectmob() { 
+ if( navigator.userAgent.match(/Android/i)
+ || navigator.userAgent.match(/webOS/i)
+ || navigator.userAgent.match(/iPhone/i)
+ || navigator.userAgent.match(/iPad/i)
+ || navigator.userAgent.match(/iPod/i)
+ || navigator.userAgent.match(/BlackBerry/i)
+ || navigator.userAgent.match(/Windows Phone/i)
+ ){
+    return true;
+  }
+ else {
+    return false;
+  }
+}
 	
 	function reloadClassSchedule()
 	{
